@@ -18,13 +18,14 @@ class GithubViewModel {
     private var githubSearchItem: [GithubSearchItem] = []
 
     init() {
-        self.service = GithubSearchService()
+        // Turn on is test is true if you need test for API
+        self.service = GithubSearchService(isTest: false)
     }
 
     /// Request repositories
     func requestRepositories() {
         // Demo param
-        let q = "stars:>=10000+language:swift"
+        let q = "language:swift"
         let sort = "stars"
         let order = "desc"
 

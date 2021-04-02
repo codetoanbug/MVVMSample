@@ -56,6 +56,7 @@ final class OnlineProvider {
         provider.request(target) { (result) in
             switch result {
             case .success(let response):
+                NSLog("Response = \(response)")
                 // When call api success
                 if response.statusCode == 200 {
                     guard let results = try? JSONDecoder().decode(T.self, from: response.data) else {
@@ -74,6 +75,7 @@ final class OnlineProvider {
                     }
                 }
             case .failure(let error):
+                NSLog("error = \(error)")
                 let error = NSError(domain: target.path, code: error.errorCode, userInfo: nil)
                 completion(.failure(BaseError.requestError(title: target.path, message: error.localizedDescription)))
             }

@@ -40,8 +40,12 @@ class GithubViewController: UIViewController {
         viewModel.requestRepositories()
     }
 
+    /// Show error alert when call API error
+    /// - Parameter error: error from server
     private func showError(error: BaseError) {
-
+        let alert = UIAlertController(title: "Error", message: error.description, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 

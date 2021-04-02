@@ -26,7 +26,7 @@ extension GithubAPI: TargetType {
     }
 
     var method: Moya.Method {
-        return .post
+        return .get
     }
 
     var sampleData: Data {
@@ -34,7 +34,9 @@ extension GithubAPI: TargetType {
 
         switch self {
         case .searchRepositories:
-            break
+            if let file = Bundle.main.url(forResource: "SearchRepositoriesResponse", withExtension: "json") {
+                dataUrl = file
+            }
         }
         if let url = dataUrl, let data = try? Data(contentsOf: url) {
             return data
@@ -44,15 +46,17 @@ extension GithubAPI: TargetType {
     }
 
     var task: Task {
-        if let parameters = parameters {
-            return .requestParameters(parameters: parameters, encoding: jsonEncoding)
+        switch self {
+        case .searchRepositories:
+            if let parameters = parameters {
+                return .requestParameters(parameters: parameters, encoding: parameterEncoding)
+            }
         }
-
         return .requestPlain
     }
 
     var headers: [String: String]? {
-        return nil
+        return ["Content-type": "application/json"]
     }
 
     var parameters: [String: Any]? {
@@ -68,7 +72,13 @@ extension GithubAPI: TargetType {
         return params
     }
 
-    public var jsonEncoding: JSONEncoding {
+    // For json encode. Use in post request
+    var jsonEncoding: JSONEncoding {
         return JSONEncoding.default
+    }
+
+    // For param encode. Use in get request
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
     }
 }
