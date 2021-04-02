@@ -26,6 +26,14 @@
 		22F07CB82616F1570061436F /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F07CB72616F1570061436F /* GithubAPI.swift */; };
 		22F07CBB2616F1D80061436F /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F07CBA2616F1D80061436F /* Configs.swift */; };
 		22F07CBF2616F3630061436F /* SearchRepositoriesResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 22F07CBE2616F3630061436F /* SearchRepositoriesResponse.json */; };
+		22F07CD32616F8400061436F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F07CD22616F8400061436F /* HomeViewController.swift */; };
+		22F07CD82616F88D0061436F /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F07CD62616F88D0061436F /* GithubViewController.swift */; };
+		22F07CD92616F88D0061436F /* GithubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F07CD72616F88D0061436F /* GithubViewController.xib */; };
+		22F07CDC2616F9290061436F /* GithubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F07CDB2616F9290061436F /* GithubViewModel.swift */; };
+		22F07CDF2616F99D0061436F /* GithubSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F07CDE2616F99D0061436F /* GithubSearchService.swift */; };
+		22F07CE22616F9C30061436F /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F07CE12616F9C30061436F /* BaseService.swift */; };
+		22F07CE72616FD850061436F /* GithubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F07CE52616FD850061436F /* GithubTableViewCell.swift */; };
+		22F07CE82616FD850061436F /* GithubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F07CE62616FD850061436F /* GithubTableViewCell.xib */; };
 		D31E3BE7B30052200ADC0467 /* Pods_TableviewSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0139878D6F0B1EB759AA2204 /* Pods_TableviewSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +61,14 @@
 		22F07CB72616F1570061436F /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		22F07CBA2616F1D80061436F /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		22F07CBE2616F3630061436F /* SearchRepositoriesResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchRepositoriesResponse.json; sourceTree = "<group>"; };
+		22F07CD22616F8400061436F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		22F07CD62616F88D0061436F /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
+		22F07CD72616F88D0061436F /* GithubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GithubViewController.xib; sourceTree = "<group>"; };
+		22F07CDB2616F9290061436F /* GithubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewModel.swift; sourceTree = "<group>"; };
+		22F07CDE2616F99D0061436F /* GithubSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSearchService.swift; sourceTree = "<group>"; };
+		22F07CE12616F9C30061436F /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		22F07CE52616FD850061436F /* GithubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTableViewCell.swift; sourceTree = "<group>"; };
+		22F07CE62616FD850061436F /* GithubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GithubTableViewCell.xib; sourceTree = "<group>"; };
 		9FA49F5A927634351F9414DF /* Pods-TableviewSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableviewSample.release.xcconfig"; path = "Target Support Files/Pods-TableviewSample/Pods-TableviewSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				22C1D8F826146E1D00794A0F /* AnimalViewModel.swift */,
-				22F07CB02616ECFD0061436F /* GithubSearchResponse.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -171,6 +186,7 @@
 				22F07CAA2616EA580061436F /* NetworkProvider.swift */,
 				22F07CAD2616EC850061436F /* BaseError.swift */,
 				22F07CBA2616F1D80061436F /* Configs.swift */,
+				22F07CE12616F9C30061436F /* BaseService.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -194,6 +210,7 @@
 		22F07CC62616F4330061436F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				22F07CD12616F82A0061436F /* Home */,
 				22F07CCB2616F4A90061436F /* Github */,
 				22F07CC72616F43B0061436F /* Animals */,
 			);
@@ -224,6 +241,9 @@
 		22F07CCC2616F4B50061436F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22F07CE42616FD780061436F /* Cell */,
+				22F07CD62616F88D0061436F /* GithubViewController.swift */,
+				22F07CD72616F88D0061436F /* GithubViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +251,7 @@
 		22F07CCD2616F4BA0061436F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22F07CB02616ECFD0061436F /* GithubSearchResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +259,7 @@
 		22F07CCE2616F4BE0061436F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				22F07CDB2616F9290061436F /* GithubViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -245,8 +267,26 @@
 		22F07CCF2616F4CB0061436F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				22F07CDE2616F99D0061436F /* GithubSearchService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		22F07CD12616F82A0061436F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				22F07CD22616F8400061436F /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		22F07CE42616FD780061436F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				22F07CE52616FD850061436F /* GithubTableViewCell.swift */,
+				22F07CE62616FD850061436F /* GithubTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		398DE4A051F09D2BFCFC197E /* Frameworks */ = {
@@ -326,7 +366,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				22C1D8E326146B0B00794A0F /* LaunchScreen.storyboard in Resources */,
+				22F07CD92616F88D0061436F /* GithubViewController.xib in Resources */,
 				22C1D8F026146B9500794A0F /* MyTableViewCell.xib in Resources */,
+				22F07CE82616FD850061436F /* GithubTableViewCell.xib in Resources */,
 				22C1D8E026146B0B00794A0F /* Assets.xcassets in Resources */,
 				22C1D8DE26146B0800794A0F /* Main.storyboard in Resources */,
 				22F07CBF2616F3630061436F /* SearchRepositoriesResponse.json in Resources */,
@@ -383,14 +425,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				22C1D8FE26146E4400794A0F /* AnimalViewController.swift in Sources */,
+				22F07CDC2616F9290061436F /* GithubViewModel.swift in Sources */,
 				22F07CB12616ECFD0061436F /* GithubSearchResponse.swift in Sources */,
 				22F07CB82616F1570061436F /* GithubAPI.swift in Sources */,
 				22C1D90B261471E900794A0F /* CGFloat+Extensions.swift in Sources */,
 				22C1D904261471A800794A0F /* UIImageView+Extensions.swift in Sources */,
+				22F07CD32616F8400061436F /* HomeViewController.swift in Sources */,
 				22C1D8EF26146B9500794A0F /* MyTableViewCell.swift in Sources */,
+				22F07CD82616F88D0061436F /* GithubViewController.swift in Sources */,
 				22C1D908261471D000794A0F /* UIColor+Extensions.swift in Sources */,
 				22F07CAB2616EA580061436F /* NetworkProvider.swift in Sources */,
 				22C1D8F926146E1D00794A0F /* AnimalViewModel.swift in Sources */,
+				22F07CE22616F9C30061436F /* BaseService.swift in Sources */,
+				22F07CDF2616F99D0061436F /* GithubSearchService.swift in Sources */,
+				22F07CE72616FD850061436F /* GithubTableViewCell.swift in Sources */,
 				22F07CAE2616EC850061436F /* BaseError.swift in Sources */,
 				22C1D8D726146B0800794A0F /* AppDelegate.swift in Sources */,
 				22C1D8D926146B0800794A0F /* SceneDelegate.swift in Sources */,

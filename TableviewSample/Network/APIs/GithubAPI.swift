@@ -8,11 +8,11 @@
 import Foundation
 import Moya
 
-enum LoginAPI {
+enum GithubAPI {
     case searchRepositories(q: String, sort: String, order: String)
 }
 
-extension LoginAPI: TargetType {
+extension GithubAPI: TargetType {
     var baseURL: URL {
         let url = URL(string: Configs.Network.baseUrl)!
         return url

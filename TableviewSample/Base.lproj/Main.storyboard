@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6T1-WC-Rfg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,6 +9,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="h8f-rD-bb9">
+            <objects>
+                <viewController id="dfw-bC-7i3" customClass="HomeViewController" customModule="TableviewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xzF-wg-0ou">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fih-Ko-ZM6">
+                                <rect key="frame" x="107" y="108" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="zI1-j9-mSj"/>
+                                </constraints>
+                                <state key="normal" title="Local Animals List"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="PbR-jO-jRn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5r-os-za9">
+                                <rect key="frame" x="107" y="168" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Lod-zP-qpr"/>
+                                </constraints>
+                                <state key="normal" title="Remote repositories lists"/>
+                                <connections>
+                                    <action selector="onRemoteButtonTouched:" destination="dfw-bC-7i3" eventType="touchUpInside" id="KT8-KN-BbV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9iN-Lk-Dtb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T5r-os-za9" firstAttribute="top" secondItem="fih-Ko-ZM6" secondAttribute="bottom" constant="30" id="1c3-nL-Vdk"/>
+                            <constraint firstItem="fih-Ko-ZM6" firstAttribute="centerX" secondItem="9iN-Lk-Dtb" secondAttribute="centerX" id="IXg-L7-fuu"/>
+                            <constraint firstItem="fih-Ko-ZM6" firstAttribute="top" secondItem="9iN-Lk-Dtb" secondAttribute="top" constant="20" id="dnz-rE-IbP"/>
+                            <constraint firstItem="T5r-os-za9" firstAttribute="centerX" secondItem="9iN-Lk-Dtb" secondAttribute="centerX" id="kqp-Mv-ws5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0XO-iS-13q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCj-Yw-wgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257.97101449275362" y="80.357142857142847"/>
+        </scene>
         <!--Animal View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,11 +62,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="778-60-Izm">
-                                <rect key="frame" x="0.0" y="105" width="414" height="757"/>
+                                <rect key="frame" x="0.0" y="149" width="414" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPY-dl-olC">
-                                <rect key="frame" x="20" y="64" width="374" height="21"/>
+                                <rect key="frame" x="20" y="108" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,13 +84,32 @@
                             <constraint firstItem="SPY-dl-olC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="gad-QD-YP0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7Cd-i0-xY6"/>
                     <connections>
                         <outlet property="tableView" destination="778-60-Izm" id="dpQ-rm-Rsi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="70"/>
+            <point key="canvasLocation" x="1005.7971014492755" y="69.642857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LWa-Vh-Y1A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6T1-WC-Rfg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sPP-gd-Zq8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dfw-bC-7i3" kind="relationship" relationship="rootViewController" id="T4X-uB-gdx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGn-a5-1Im" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652.17391304347836" y="80.357142857142847"/>
         </scene>
     </scenes>
     <resources>
