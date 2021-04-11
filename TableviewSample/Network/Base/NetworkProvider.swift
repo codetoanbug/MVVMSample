@@ -1,5 +1,5 @@
 //
-//  QGNetworkProvider.swift
+//  NetworkProvider.swift
 //  TableviewSample
 //
 //  Created by xuanquynhle on 2021/04/02.
@@ -16,10 +16,6 @@ var loggingEnabled: Bool = true
 #else
 var loggingEnabled: Bool = false
 #endif
-
-protocol ProductAPIType {
-    var addXAuth: Bool { get }
-}
 
 protocol NetworkingType {
     associatedtype Target: TargetType

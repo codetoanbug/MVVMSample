@@ -1,5 +1,5 @@
 //
-//  QGError.swift
+//  BaseError.swift
 //  TableviewSample
 //
 //  Created by xuanquynhle on 2021/04/02.
