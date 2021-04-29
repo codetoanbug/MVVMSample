@@ -75,6 +75,7 @@ class GithubViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
+    /// Perform search
     private func performSearch() {
         // Not search with same string
         guard let language = searchTextField.text?.trimmingCharacters(in: .whitespaces),
@@ -114,11 +115,10 @@ extension GithubViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension GithubViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // Invalidate remove the previous timer, since it's optional if the previous timer is already cancelled or nil, it won't affect execution
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] timer in
             // search after 0.5 second
-            self.performSearch()
+            self?.performSearch()
         })
 
         return true
@@ -128,5 +128,9 @@ extension GithubViewController: UITextFieldDelegate {
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         viewModel.clearTableView()
         return true
+    }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
     }
 }

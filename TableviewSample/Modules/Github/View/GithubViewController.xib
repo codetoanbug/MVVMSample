@@ -24,12 +24,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type any language(Ex: swift)..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hED-IQ-54a">
-                    <rect key="frame" x="20" y="54" width="374" height="14"/>
+                    <rect key="frame" x="20" y="54" width="374" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="K60-2h-gZX"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="webSearch" returnKeyType="search"/>
                 </textField>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6ig-Jl-ugt">
-                    <rect key="frame" x="0.0" y="68" width="414" height="794"/>
+                    <rect key="frame" x="0.0" y="89" width="414" height="773"/>
                     <subviews>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3Uz-l3-Ks9">
                             <rect key="frame" x="197" y="0.0" width="20" height="20"/>
@@ -39,11 +42,11 @@
                             </constraints>
                         </activityIndicatorView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gZl-jk-WVh">
-                            <rect key="frame" x="0.0" y="20" width="414" height="754"/>
+                            <rect key="frame" x="0.0" y="20" width="414" height="733"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="sYO-IP-H5e">
-                            <rect key="frame" x="197" y="774" width="20" height="20"/>
+                            <rect key="frame" x="197" y="753" width="20" height="20"/>
                         </activityIndicatorView>
                     </subviews>
                     <constraints>
