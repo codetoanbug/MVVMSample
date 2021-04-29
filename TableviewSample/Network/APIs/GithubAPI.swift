@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum GithubAPI {
-    case searchRepositories(q: String, sort: String, order: String)
+    case searchRepositories(q: String, sort: String, order: String, page: Int)
 }
 
 extension GithubAPI: TargetType {
@@ -63,10 +63,11 @@ extension GithubAPI: TargetType {
         var params: [String: Any] = [:]
 
         switch self {
-        case .searchRepositories(let q, let sort, let order):
+        case .searchRepositories(let q, let sort, let order, let page):
             params["q"] = q
             params["sort"] = sort
             params["order"] = order
+            params["page"] = page
         }
 
         return params

@@ -13,7 +13,12 @@ class GithubViewModel {
     // Callback to view
     var needReloadTableView: (() -> Void)?
     var needShowError: ((BaseError) -> Void)?
+    var needSetStateBottomIndicatorView: ((_ show: Bool) -> Void)?
 
+    private var page: Int = 0
+    private var language = ""
+    private var incompleteResults = false
+    
     // Datasource
     private var githubSearchItem: [GithubSearchItem] = []
 
@@ -22,18 +27,44 @@ class GithubViewModel {
         self.service = GithubSearchService(isTest: false)
     }
 
+    /// Clear tableview data source
+    func clearTableView() {
+        self.page = 0
+        self.incompleteResults = false
+        self.githubSearchItem.removeAll()
+        self.needReloadTableView?()
+    }
+
     /// Request repositories
-    func requestRepositories() {
-        // Demo param
-        let q = "language:swift"
+    func requestRepositories(language: String, loadMore: Bool = false) {
+        // Check when load more
+        if self.incompleteResults {
+            return
+        }
+        if !loadMore {
+            self.page = 0
+            self.githubSearchItem.removeAll()
+        }
+
+        self.language = language
+
+        // Default param
         let sort = "stars"
         let order = "desc"
 
-        self.service.searchRepositories(q: q, sort: sort, order: order) { [weak self] result in
+        self.service.searchRepositories(language: language, sort: sort, order: order, page: self.page) { [weak self] result in
             guard let strongSelf = self else { return }
+            // Check when load more
+            if loadMore {
+                strongSelf.needSetStateBottomIndicatorView?(false)
+            }
+
             switch result {
             case .success(let githubResponse):
-                strongSelf.githubSearchItem = githubResponse.items ?? []
+                strongSelf.incompleteResults = githubResponse.incompleteResults
+                if let items = githubResponse.items {
+                    items.forEach( {strongSelf.githubSearchItem.append( $0 )})
+                }
                 strongSelf.needReloadTableView?()
             case .failure(let error):
                 strongSelf.needShowError?(error)
@@ -46,6 +77,13 @@ class GithubViewModel {
     }
 
     func cellForRowAt(indexPath: IndexPath) -> GithubSearchItem {
+        // Check if the last row number is the same as the last current data element
+            if indexPath.row == self.githubSearchItem.count - 1 {
+                self.page += 1
+                self.requestRepositories(language: language, loadMore: true)
+                self.needSetStateBottomIndicatorView?(true)
+            }
+
         return githubSearchItem[indexPath.row]
     }
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 class GithubSearchService: BaseService {
-    func searchRepositories(q: String, sort: String, order: String, completion: @escaping (Result<GithubSearchResponse, BaseError>) -> Void) {
-        provider.request(MultiTarget(GithubAPI.searchRepositories(q: q, sort: sort, order: order)), type: GithubSearchResponse.self) { result in
+    func searchRepositories(language: String, sort: String, order: String, page: Int, completion: @escaping (Result<GithubSearchResponse, BaseError>) -> Void) {
+        provider.request(MultiTarget(GithubAPI.searchRepositories(q: language, sort: sort, order: order, page: page)), type: GithubSearchResponse.self) { result in
             completion(result)
         }
     }

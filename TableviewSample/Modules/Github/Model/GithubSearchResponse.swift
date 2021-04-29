@@ -10,7 +10,7 @@ import Foundation
 // MARK: - GithubSearchResponse
 struct GithubSearchResponse: Codable {
     let totalCount: Int?
-    let incompleteResults: Bool?
+    let incompleteResults: Bool
     let items: [GithubSearchItem]?
 
     enum CodingKeys: String, CodingKey {
