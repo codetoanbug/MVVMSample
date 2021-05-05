@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222E3FE5264258BC00BA00C1 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E3FE4264258BC00BA00C1 /* RealmManager.swift */; };
+		222E3FE82642591A00BA00C1 /* RealmGithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E3FE72642591A00BA00C1 /* RealmGithubService.swift */; };
 		22C1D8D726146B0800794A0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1D8D626146B0800794A0F /* AppDelegate.swift */; };
 		22C1D8D926146B0800794A0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1D8D826146B0800794A0F /* SceneDelegate.swift */; };
 		22C1D8DE26146B0800794A0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22C1D8DC26146B0800794A0F /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		0139878D6F0B1EB759AA2204 /* Pods_TableviewSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableviewSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A4E1B02F35032703A490E59 /* Pods-TableviewSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableviewSample.debug.xcconfig"; path = "Target Support Files/Pods-TableviewSample/Pods-TableviewSample.debug.xcconfig"; sourceTree = "<group>"; };
+		222E3FE4264258BC00BA00C1 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		222E3FE72642591A00BA00C1 /* RealmGithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGithubService.swift; sourceTree = "<group>"; };
 		22C1D8D326146B0800794A0F /* TableviewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableviewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C1D8D626146B0800794A0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22C1D8D826146B0800794A0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222E3FE22642583B00BA00C1 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				222E3FE6264258EC00BA00C1 /* Services */,
+				222E3FE32642584500BA00C1 /* Base */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		222E3FE32642584500BA00C1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				222E3FE4264258BC00BA00C1 /* RealmManager.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		222E3FE6264258EC00BA00C1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				222E3FE72642591A00BA00C1 /* RealmGithubService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		22C1D8CA26146B0800794A0F = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +134,7 @@
 		22C1D8D526146B0800794A0F /* TableviewSample */ = {
 			isa = PBXGroup;
 			children = (
+				222E3FE22642583B00BA00C1 /* RealmManager */,
 				22F07CC62616F4330061436F /* Modules */,
 				22F07CA42616E9AB0061436F /* Network */,
 				22C1D9022614719700794A0F /* Extensions */,
@@ -424,11 +454,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222E3FE82642591A00BA00C1 /* RealmGithubService.swift in Sources */,
 				22C1D8FE26146E4400794A0F /* AnimalViewController.swift in Sources */,
 				22F07CDC2616F9290061436F /* GithubViewModel.swift in Sources */,
 				22F07CB12616ECFD0061436F /* GithubSearchResponse.swift in Sources */,
 				22F07CB82616F1570061436F /* GithubAPI.swift in Sources */,
 				22C1D90B261471E900794A0F /* CGFloat+Extensions.swift in Sources */,
+				222E3FE5264258BC00BA00C1 /* RealmManager.swift in Sources */,
 				22C1D904261471A800794A0F /* UIImageView+Extensions.swift in Sources */,
 				22F07CD32616F8400061436F /* HomeViewController.swift in Sources */,
 				22C1D8EF26146B9500794A0F /* MyTableViewCell.swift in Sources */,

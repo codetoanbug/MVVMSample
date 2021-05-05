@@ -88,10 +88,12 @@ class GithubViewController: UIViewController {
             return
         }
 
-        // Request API here
-        viewModel.requestRepositories(language: language)
         self.topIndicatorView.isHidden = false
         self.topIndicatorView.startAnimating()
+
+        // Request API here
+        viewModel.requestRepositories(language: language)
+        
         currentLanguage = language
     }
 }
@@ -126,6 +128,7 @@ extension GithubViewController: UITextFieldDelegate {
 
     // Clear text with button
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        currentLanguage = ""
         viewModel.clearTableView()
         return true
     }

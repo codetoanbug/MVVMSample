@@ -37,16 +37,36 @@ class GithubViewModel {
 
     /// Request repositories
     func requestRepositories(language: String, loadMore: Bool = false) {
+        self.language = language
         // Check when load more
         if self.incompleteResults {
             return
         }
+
+        // Check data in local
+        let keyword = language + String(self.page)
+        if let oldResonse = RealmGithubService.shared.getRepositoryResponse(with: keyword) {
+            print("from local")
+            let items = oldResonse.items
+            self.incompleteResults = oldResonse.incompleteResults
+
+            items.forEach({ item in
+                githubSearchItem.append(item)
+            })
+
+            if self.githubSearchItem.count > 0 {
+                // Check when load more
+                self.page += 1
+                self.needSetStateBottomIndicatorView?(false)
+                self.needReloadTableView?()
+                return
+            }
+        }
+
         if !loadMore {
             self.page = 0
             self.githubSearchItem.removeAll()
         }
-
-        self.language = language
 
         // Default param
         let sort = "stars"
@@ -61,10 +81,14 @@ class GithubViewModel {
 
             switch result {
             case .success(let githubResponse):
+                // Save data to realm
+                let keyword = language + String(strongSelf.page)
+                githubResponse.keyword = keyword
+                _ = RealmGithubService.shared.saveRepositoryResponse(repoList: githubResponse)
                 strongSelf.incompleteResults = githubResponse.incompleteResults
-                if let items = githubResponse.items {
-                    items.forEach( {strongSelf.githubSearchItem.append( $0 )})
-                }
+                let items = githubResponse.items
+                items.forEach( {strongSelf.githubSearchItem.append( $0 )})
+                print("from network")
                 strongSelf.needReloadTableView?()
             case .failure(let error):
                 strongSelf.needShowError?(error)
@@ -79,9 +103,9 @@ class GithubViewModel {
     func cellForRowAt(indexPath: IndexPath) -> GithubSearchItem {
         // Check if the last row number is the same as the last current data element
             if indexPath.row == self.githubSearchItem.count - 1 {
+                self.needSetStateBottomIndicatorView?(true)
                 self.page += 1
                 self.requestRepositories(language: language, loadMore: true)
-                self.needSetStateBottomIndicatorView?(true)
             }
 
         return githubSearchItem[indexPath.row]
