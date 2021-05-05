@@ -46,10 +46,9 @@ class GithubViewModel {
         // Check data in local
         let keyword = language + String(self.page)
         if let oldResonse = RealmGithubService.shared.getRepositoryResponse(with: keyword) {
+            self.incompleteResults = oldResonse.incompleteResults
             print("from local")
             let items = oldResonse.items
-            self.incompleteResults = oldResonse.incompleteResults
-
             items.forEach({ item in
                 githubSearchItem.append(item)
             })
