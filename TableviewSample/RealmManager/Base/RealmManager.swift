@@ -33,7 +33,7 @@ protocol RealmServiceProtocol {
 }
 
 /// Base realm service
-class RealmManager<T: RealmRepresentable>: RealmServiceProtocol where T: Object {
+class RealmManager<T: RealmRepresentable>: RealmServiceProtocol {
     typealias Entity = T
 
     private let configuration: Realm.Configuration
