@@ -82,8 +82,7 @@ class GithubViewModel {
             case .success(let githubResponse):
                 // Save data to realm
                 let keyword = language + String(strongSelf.page)
-                githubResponse.keyword = keyword
-                _ = RealmGithubService.shared.saveRepositoryResponse(repoList: githubResponse)
+                _ = RealmGithubService.shared.saveRepositoryResponse(with: keyword, repoList: githubResponse)
                 strongSelf.incompleteResults = githubResponse.incompleteResults
                 let items = githubResponse.items
                 items.forEach( {strongSelf.githubSearchItem.append( $0 )})

@@ -8,17 +8,18 @@
 import Foundation
 
 protocol RealmGithubServiceProtocol {
-    func saveRepositoryResponse(repoList: GithubSearchResponse) -> Bool
+    func saveRepositoryResponse(with keyword: String, repoList: GithubSearchResponse) -> Bool
     func getRepositoryResponse(with keyword: String) -> GithubSearchResponse?
     func deleteRepositoryResponse(with keyword: String) -> Bool
-    func deleteAllRepositoryResppnses() -> Bool
+    func deleteAllRepositoryResponses() -> Bool
 }
 
 class RealmGithubService: RealmManager<GithubSearchResponse>, RealmGithubServiceProtocol {
     /// Save repository response
     /// - Parameter repoList: repoList need save
     /// - Returns: success or failed
-    func saveRepositoryResponse(repoList: GithubSearchResponse) -> Bool {
+    func saveRepositoryResponse(with keyword: String, repoList: GithubSearchResponse) -> Bool {
+        repoList.keyword = keyword
         return self.save(entity: repoList)
     }
 
@@ -42,7 +43,7 @@ class RealmGithubService: RealmManager<GithubSearchResponse>, RealmGithubService
 
     /// Delete all repository response
     /// - Returns: success or failed
-    func deleteAllRepositoryResppnses() -> Bool {
+    func deleteAllRepositoryResponses() -> Bool {
         return self.deleteAll()
     }
 
