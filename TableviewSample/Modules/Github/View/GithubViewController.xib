@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="bottomIndicatorView" destination="sYO-IP-H5e" id="bJ7-Ml-gDh"/>
                 <outlet property="githubTableView" destination="gZl-jk-WVh" id="Wol-6l-sjP"/>
-                <outlet property="searchTextField" destination="hED-IQ-54a" id="Nk6-x5-bdu"/>
+                <outlet property="searchTextField" destination="hED-IQ-54a" id="eCz-ez-B7E"/>
                 <outlet property="topIndicatorView" destination="3Uz-l3-Ks9" id="6tb-Po-Gce"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

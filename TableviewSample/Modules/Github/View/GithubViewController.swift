@@ -23,6 +23,9 @@ class GithubViewController: UIViewController {
 
         self.bindViewModel()
         self.initTableView()
+        self.view.accessibilityIdentifier = Common.GithubViewControllerId
+        self.searchTextField.accessibilityIdentifier = Common.githubSearchTextViewId
+        self.githubTableView.accessibilityIdentifier = Common.githubTableViewId
     }
 
     /// Init table view

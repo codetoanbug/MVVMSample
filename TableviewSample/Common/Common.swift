@@ -12,4 +12,6 @@ class Common {
     static let GithubViewControllerId = "GithubViewControllerId"
     static let localButtonId = "localButtonId"
     static let githubButtonId = "githubButtonId"
+    static let githubSearchTextViewId = "githubSearchTextViewId"
+    static let githubTableViewId = "githubTableViewId"
 }

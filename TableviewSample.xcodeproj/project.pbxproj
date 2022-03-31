@@ -48,6 +48,8 @@
 		76C6283127F53CDD00462617 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6282F27F53CAF00462617 /* Common.swift */; };
 		76C6283327F5414C00462617 /* HomeViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6283227F5414C00462617 /* HomeViewControllerUITest.swift */; };
 		76C6283527F541E000462617 /* BaseViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6283427F541E000462617 /* BaseViewControllerUITest.swift */; };
+		76C6283727F5470600462617 /* GithubViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6283627F5470600462617 /* GithubViewControllerUITest.swift */; };
+		76C6283927F54A4500462617 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6283827F54A4500462617 /* XCTestCase+Extension.swift */; };
 		D318930813CCF0B941B68535 /* Pods_TableviewSample_TableviewSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C923062021841CADD3E6C8 /* Pods_TableviewSample_TableviewSampleUITests.framework */; };
 		D31E3BE7B30052200ADC0467 /* Pods_TableviewSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0139878D6F0B1EB759AA2204 /* Pods_TableviewSample.framework */; };
 /* End PBXBuildFile section */
@@ -118,6 +120,8 @@
 		76C6282F27F53CAF00462617 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		76C6283227F5414C00462617 /* HomeViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerUITest.swift; sourceTree = "<group>"; };
 		76C6283427F541E000462617 /* BaseViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerUITest.swift; sourceTree = "<group>"; };
+		76C6283627F5470600462617 /* GithubViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewControllerUITest.swift; sourceTree = "<group>"; };
+		76C6283827F54A4500462617 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		78C923062021841CADD3E6C8 /* Pods_TableviewSample_TableviewSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableviewSample_TableviewSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA49F5A927634351F9414DF /* Pods-TableviewSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableviewSample.release.xcconfig"; path = "Target Support Files/Pods-TableviewSample/Pods-TableviewSample.release.xcconfig"; sourceTree = "<group>"; };
 		B0F24A9E241F9E18352183E4 /* Pods-TableviewSample-TableviewSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableviewSample-TableviewSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-TableviewSample-TableviewSampleUITests/Pods-TableviewSample-TableviewSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -425,6 +429,7 @@
 				76C6282027F530DF00462617 /* Base */,
 				76C6281527F52AA300462617 /* TableviewSampleUITests.swift */,
 				76C6281727F52AA300462617 /* Info.plist */,
+				76C6283827F54A4500462617 /* XCTestCase+Extension.swift */,
 			);
 			path = TableviewSampleUITests;
 			sourceTree = "<group>";
@@ -451,8 +456,9 @@
 		76C6282427F5390A00462617 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				76C6283227F5414C00462617 /* HomeViewControllerUITest.swift */,
 				76C6283427F541E000462617 /* BaseViewControllerUITest.swift */,
+				76C6283227F5414C00462617 /* HomeViewControllerUITest.swift */,
+				76C6283627F5470600462617 /* GithubViewControllerUITest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -729,9 +735,11 @@
 				76C6281627F52AA300462617 /* TableviewSampleUITests.swift in Sources */,
 				76C6282B27F53BBB00462617 /* HomeViewControllerPage.swift in Sources */,
 				76C6281F27F530B200462617 /* TraceTests.swift in Sources */,
+				76C6283727F5470600462617 /* GithubViewControllerUITest.swift in Sources */,
 				76C6282927F5397600462617 /* PageObjectable.swift in Sources */,
 				76C6283127F53CDD00462617 /* Common.swift in Sources */,
 				76C6283327F5414C00462617 /* HomeViewControllerUITest.swift in Sources */,
+				76C6283927F54A4500462617 /* XCTestCase+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,7 +35,7 @@ extension BaseViewControllerUITest where Self: XCTestCase {
     /// The URL to the trace file for the current test when recording
     var recordUrl: URL {
         let bundle = Bundle(for: type(of: self))
-        let recordPath = bundle.infoDictionary!["TraceRecordPath"] as! String
+        let recordPath = bundle.infoDictionary!["TraceRecordPath"] as! String       
         return URL(fileURLWithPath: "\(recordPath)/\(self.traceName).trace")
     }
 }
