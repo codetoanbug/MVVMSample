@@ -8,10 +8,15 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    @IBOutlet weak var localButton: UIButton!
+    @IBOutlet weak var remoteButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.accessibilityIdentifier = Common.HomeViewControllerId
+        self.localButton.accessibilityIdentifier = Common.localButtonId
+        self.remoteButton.accessibilityIdentifier = Common.githubButtonId
     }
 
     /// On Remote Button Touched

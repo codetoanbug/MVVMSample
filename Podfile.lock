@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
+  - Embassy (4.1.1)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -9,24 +10,31 @@ PODS:
   - Realm/Headers (10.7.3)
   - RealmSwift (10.7.3):
     - Realm (= 10.7.3)
+  - Succulent (0.5.0):
+    - Embassy (~> 4.1.0)
 
 DEPENDENCIES:
   - Moya (~> 14.0)
   - RealmSwift
+  - Succulent
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Embassy
     - Moya
     - Realm
     - RealmSwift
+    - Succulent
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Embassy: eb36dc783ea20b792426461bbaff8c3f256e0331
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Realm: 472ea9ad72cee02df140dfd2926f482df6addbd2
   RealmSwift: 7462f44bc04b61505ef70e4863ee7ce48fa12ede
+  Succulent: 600b787c9b0d67d8d71f33a93cd5a57953e6fbb3
 
-PODFILE CHECKSUM: e4fad01edc1c5f42d4a1e4e5a39a104781e32879
+PODFILE CHECKSUM: 8e9706287819e41ae5e8c354494cda4adb0975bb
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
